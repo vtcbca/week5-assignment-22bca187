@@ -1,0 +1,74 @@
+#Direct  Input
+header=['SID','SNAME','CITY','CONTACT']
+Student_DATA=[[1,'Om','Surat',6787987678],
+        [2,'Sai','Bardoli',6576854324],
+        [3,'Ram','Mota',67569087432],
+        [4,'Radha','Madhi',5465768765],
+        [5,'Krishna','Valod',1234567809]]
+#User Input
+list=[]
+for i in range(5):
+    SID=int(input("Enter Student Id:"))
+    SNAME=input("Enter Student Name:")
+    CITY=input("Enter Student City:")
+    CONTACT=int(input("Enter Student Contect Number:"))
+    list2=[SID,SNAME,CITY,CONTACT]
+    list.append(list2)
+
+----->
+
+Enter Student Id: 6
+Enter Student Name: Margi
+Enter Student City: Vyara
+Enter Student Contect Number: 6576879809
+
+Enter Student Id: 7
+Enter Student Name: Jyoti
+Enter Student City: Bardoli
+Enter Student Contect Number: 576543456
+
+Enter Student Id: 8
+Enter Student Name: Vihu
+Enter Student City: Bardoli
+Enter Student Contect Number: 6574839201
+
+Enter Student Id: 9
+Enter Student Name: Sarita
+Enter Student City: Surat
+Enter Student Contect Number: 46576879809
+
+Enter Student Id: 10
+Enter Student Name: Riya
+Enter Student City: Navsari
+Enter Student Contect Number: 675432109
+
+
+#write file
+import csv
+with open('Student.csv','w',newline='')as csv_file:
+    w=csv.writer(csv_file)
+    w.writerow(header)
+    w.writerows(Student_DATA)
+    w.writerows(list)
+
+
+#Read file
+import csv
+with open('Student.csv','r')as read_obj:
+    data=csv.reader(read_obj)
+    for Student_DATA in data:
+        print(Student_DATA)
+
+----->
+['SID', 'SNAME', 'CITY', 'CONTACT']
+['1', 'Om', 'Surat', '6787987678']
+['2', 'Sai', 'Bardoli', '6576854324']
+['3', 'Ram', 'Mota', '67569087432']
+['4', 'Radha', 'Madhi', '5465768765']
+['5', 'Krishna', 'Valod', '1234567809']
+['6', 'Margi', 'Vyara', '6576879809']
+['7', 'Jyoti', 'Bardoli', '576543456']
+['8', 'Vihu', 'Bardoli', '6574839201']
+['9', 'Sarita', 'Surat', '46576879809']
+['10', 'Riya', 'Navsari', '675432109']
+
